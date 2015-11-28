@@ -41,6 +41,13 @@ void GLWidget::initializeGL()
 
     program->bind();
 
+
+
+
+
+
+    program->setUniformValue(program->uniformLocation("shininess"), (float)20.0);
+
 }
 
 void GLWidget::resizeGL(int w,int h)
@@ -54,29 +61,18 @@ void GLWidget::paintGL()
     glClear(GL_COLOR_BUFFER_BIT
             | GL_DEPTH_BUFFER_BIT);
 
+    glBegin(GL_QUADS);
+            glNormal3f(0.0,0.0,1.0);
+            glVertex3f(-10,5,0);	//gl_Vertex
+            glVertex3f(-10,-5,0);
+            glVertex3f(10,-5,0);
+            glVertex3f(10,5,0);
+        glEnd();
 
-    program->setUniformValue("lightPos", 0.0, 0.0, 0.0);
-
-    program->setUniformValue("mdiffuse", 0.6, 0.6, 0.6);
-    program->setUniformValue("mambient", 0.2, 0.2, 0.2);
-    program->setUniformValue("mspecular", 1.0, 1.0, 1.0);
-
-    program->setUniformValue("ldiffuse", 0.6, 0.6, 0.6);
-    program->setUniformValue("lambient", 0.2, 0.2, 0.2);
-    program->setUniformValue("lspecular", 1.0, 1.0, 1.0);
-
-    program->setUniformValue(program->uniformLocation("shininess"), (float)20.0);
-
-    //qDebug() << program->uniformLocation("shininess");
-
-
-
-    glutSolidTorus(2, 5, 20, 30);
-    glRotatef(1.0, 1, 1, 1);
+        glRotatef(1, 0, 1, 0);
 }
 void GLWidget::clickedButton(){
 
-    glTranslatef(0.0, 3,  0);
 
 }
 
