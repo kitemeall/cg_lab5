@@ -11,7 +11,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = Lab5Shader
 TEMPLATE = app
 
-LIBS += -lGLU -lglut
+LIBS += -lGLU
 SOURCES += main.cpp\
         mainwindow.cpp \
     glwidget.cpp
