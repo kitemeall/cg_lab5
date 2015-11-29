@@ -62,6 +62,7 @@ void GLWidget::paintGL()
 
     glBegin(GL_QUADS);
             glNormal3f(0.0,0.0,1.0);
+            glColor3f(0.2, 0.5, 0.6);
             glVertex3f(-10,5,0);	//gl_Vertex
             glVertex3f(-10,-5,0);
             glVertex3f(10,-5,0);
