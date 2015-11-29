@@ -26,13 +26,13 @@ void GLWidget::initializeGL()
 
 
     QOpenGLShader vShader(QOpenGLShader::Vertex);
-    vShader.compileSourceFile("../Lab5/Shader/vshader.glsl");
+    vShader.compileSourceFile(":/Shader/vshader.glsl");
     qDebug() << "Compile vertex shader log:"<<vShader.log();
     program->addShader(&vShader);
     program->link();
 
     QOpenGLShader fshader(QOpenGLShader::Fragment);
-    fshader.compileSourceFile("../Lab5/Shader/fshader.glsl");
+    fshader.compileSourceFile(":/Shader/fshader.glsl");
     qDebug() << "Compile fragment shader log:"<<fshader.log();
     program->addShader(&fshader);
     program->link();
